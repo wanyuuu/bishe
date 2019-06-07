@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie-1.4.1.min.js"></script>
+		<script src="js/tojson.js"></script>
+		<script src="js/user.js"></script>
+	</head>
+	<body>
+		<div class="login">
+			<div class="content clearfix">
+				<div class="content-left">
+					<div class="logo">
+						<img src="images/hrbust.jpg" alt=""/>
+						<p>哈尔滨理工会议管理系统</p>
+					</div>
+				</div>
+				<div class="shu"></div>
+				<div class="content-right">
+					<div class="login-form">
+						<h2>用户登录/LOGIN</h2>
+						<div class="identifire">
+							<span>身　份：</span>
+							<select id="shenfen">
+								<option value="user" selected="selected">普通用户</option>
+								<option value="administrator">管理员</option>
+							</select>
+						</div>
+						<form id="user">
+						<div class="sno clearfix">
+							<span>姓　名：</span>
+							<input type="text" name="username" id="username" value="请输入用户名"  onfocus="this.value = ''" onblur="if (this.value == '' ){this.value = '请输入用户名';}"/>
+
+						</div>
+						<div class="password clearfix">
+							<span>密　码：</span>
+							<input type="password" name="password" id="password" value="请输入密码" onfocus="this.value = ''" onblur="if (this.value == '' ){this.value = '请输入密码';}"/>
+						</div>
+						</form>
+						<!--<div class="code clearfix">-->
+							<!--<span>验证码：</span>-->
+							<!--<input type="text" value="" />-->
+							<!--<em></em>-->
+						<!--</div>-->
+						<div class="btn">
+							<span id="login"><a>登录</a></span>
+							<span class="register"><a href="register.html">注册</a></span>
+							<!--<span class="forget"><a>忘记密码</a></span>-->
+						</div>
+						<br/>
+						<span id = "cg"></span>
+						<br/>
+						<br/>
+						具体问题请咨询：<a href = "http://www.hrbust.edu.cn/">哈尔滨理工大学</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			//    这个cg就是span的id,初始化Date时间并转化为字符string类型,每1000毫秒,setInterval() 就会调用函数,直到被关闭。
+			setInterval("cg.innerHTML = new Date().toLocaleString()",1000);
+		</script>
+	</body>
+</html>

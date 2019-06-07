@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <title>会议信息系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/admin.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="span2">
+
+            <div class="main-left-col">
+
+                <h3><i class="icon-shopping-cart icon-large"></i>&nbsp;会议信息系统</h3>
+
+                <ul class="side-nav">
+
+                    <li>
+                        <a href="index.html"><i class="icon-home"></i> 首     页</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#website-dropdown" href="#"><i class="icon-sitemap"></i> 公     告<b class="caret"></b></a>
+                        <ul id="website-dropdown" class="collapse">
+                            <li><a href="news.html">&nbsp;&nbsp;&nbsp;&nbsp;行业新闻</a></li>
+                            <li><a href="message.html">&nbsp;&nbsp;&nbsp;&nbsp;会议通知</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#"><i class="icon-shopping-cart"></i> 个 人 中 心<b class="caret"></b></a>
+                        <ul id="store-dropdown" class="collapse">
+                            <li><a href="javascript:void(0)" onclick="userInfo()">&nbsp;&nbsp;&nbsp;&nbsp;修改信息</a></li>
+                            <li><a href="javascript:void(0)" onclick="uppassword()">&nbsp;&nbsp;&nbsp;&nbsp;修改密码</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#"><i class="icon-signal"></i> 会 议 管 理<b class="caret"></b></a>
+                        <ul id="reports-dropdown" class="collapse">
+                            <li><a href="javascript:void(0)" onclick="orderMeeting()">&nbsp;&nbsp;&nbsp;&nbsp;会议室预定</a></li>
+                            <li><a href="javascript:void(0)" onclick="myMeeting()">&nbsp;&nbsp;&nbsp;&nbsp;我的会议</a></li>
+                            <li><a href="javascript:void(0)" onclick="myOrder()">&nbsp;&nbsp;&nbsp;&nbsp;我的预定</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#members-dropdown" href="#"><i class="icon-group"></i> 管 理 中 心<b class="caret"></b></a>
+                        <ul id="members-dropdown" class="collapse">
+                            <li><a href="javascript:void(0)" onclick="userlist()">&nbsp;&nbsp;&nbsp;&nbsp;人员管理</a></li>
+                            <li><a href="javascript:void(0)" onclick="department()">&nbsp;&nbsp;&nbsp;&nbsp;部门管理</a></li>
+                            <li><a href="javascript:void(0)" onclick="approve()">&nbsp;&nbsp;&nbsp;&nbsp;注册审批</a></li>
+                            <li><a href="javascript:void(0)" onclick="room()">&nbsp;&nbsp;&nbsp;&nbsp;会议室管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#settings-dropdown" href="#"><i class="icon-cogs"></i> 留 言 板 <b class="caret"></b></a>
+                        <ul id="settings-dropdown" class="collapse">
+                            <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;用户留言</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#help-dropdown" href="#"><i class="icon-info-sign"></i> 帮     助<b class="caret"></b></a>
+                        <ul id="help-dropdown">
+                            <li class="active"><a href="news.html">&nbsp;&nbsp;&nbsp;&nbsp;常见问题</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div> <!-- end main-left-col -->
+
+        </div> <!-- end span2 -->
+
+        <div class="span10">
+
+            <div class="secondary-masthead">
+
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a href="#"><i class="icon-globe"></i> View Website</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> John Smith <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">Your Profile</a></li>
+                            <li class="active"><a href="form.html">Account Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">会议信息系统</a> <span class="divider">/</span>
+                    </li>
+                    <li class="active">预订会议室</li>
+                </ul>
+
+            </div>
+
+            <div class="main-area button">
+
+                <div class="row">
+
+                    <div class="span10">
+
+                        <form>
+                            <input type="hidden" id="mrid" name="mrid">
+                            会议名称：<input type="text" id="mname" name="mname"></br>
+                            开始时间：<input type="datetime-local" id="starttime" name="starttime"></br>
+                            结束时间：<input type="datetime-local" id="endtime" name="endtime"><br/>
+                            开会人数：<input type="text" id="mnumber" name="mnumber"><br/>
+                            部 &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;门：<select id="department" name="did" ></select><br/>
+                            附加信息：<textarea id="information" name="information"></textarea><br/>
+                        </form>
+                        可用会议室：<table class="orders-table table" id="usedRoom">
+                        <thead>
+                        <tr id="0">
+                            <th>编号</th>
+                            <th>会议室名称</th>
+                            <th>会议室地址</th>
+                            <th>会议室容量</th>
+                        </tr>
+                        </thead>
+                    </table>
+                        <button id="showroom">点击查看</button>
+                        <button id="save">保存</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div> <!-- end span10 -->
+
+    </div> <!-- end row -->
+
+</div> <!-- end container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.cookie-1.4.1.min.js"></script>
+<script src="js/administrator.js"></script>
+<script src="js/tojson.js"></script>
+<script src="js/createMeeting.js"></script>
+<script>
+    USER_DEPARTMENT_URL = "http://localhost:8080/user/queryDepartment"
+    $(function () {
+        $.ajax({
+            url:USER_DEPARTMENT_URL,
+            type:"POST",
+            dataType:"json",
+            statusCode:{
+                200:function (data) {
+                    $(data).each(function (index) {
+                        $("#department").append("<option value='"+ data[index].did +"'>"+ data[index].dname +"</option>")
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
